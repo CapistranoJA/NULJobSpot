@@ -23,3 +23,6 @@ Route::get('/contact', function(){
 Route::get('/home', function(){
     return view('pages.home');
 });
+Route::get('/admin/home', function(){
+    return view('pages.adminhome');
+});
