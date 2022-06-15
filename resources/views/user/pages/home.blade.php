@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('user.layouts.layout')
 @section('content')
    <div class = 'container-fluid bg-secondary'>
        <h1 class='h3 text-center text-light py-2 text-sm'>Quick Apply</h1>

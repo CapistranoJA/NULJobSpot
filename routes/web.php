@@ -14,15 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layouts.layout');
+    return view('user.layouts.layout');
+});
+Route::get('/admin', function () {
+    return view('admin.layouts.adminlayout');
 });
 Route::get('/contact', function(){
     return view('pages.contact');
 });
 
 Route::get('/home', function(){
-    return view('pages.home');
+    return view('user.pages.home');
 });
 Route::get('/admin/home', function(){
-    return view('pages.adminhome');
+    return view('admin.pages.adminhome');
 });
