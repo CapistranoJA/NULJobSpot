@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\userController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('user.layouts.layout');
+    return view('index.layouts.layout');
 });
 Route::get('/admin', function () {
     return view('admin.layouts.adminlayout');
@@ -29,3 +30,5 @@ Route::get('/home', function(){
 Route::get('/admin/home', function(){
     return view('admin.pages.adminhome');
 });
+//show registration
+Route::get('/register',[userController::class, 'create']);
