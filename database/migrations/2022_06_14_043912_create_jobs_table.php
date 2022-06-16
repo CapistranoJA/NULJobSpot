@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('tags');
             $table->string('department');
+            $table->foreign('department')->references('department')->on('departments');
             $table->integer('salary');
             $table->longText('qualifications');
             $table->longText('description');

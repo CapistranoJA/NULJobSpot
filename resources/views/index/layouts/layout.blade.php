@@ -11,10 +11,9 @@
        @include('index.includes.header')
 
    </header>
-  
    <div id="main" class="min-vh-100" style="height:100px;background-color:rgb(22,22,22);">
-    @include('index._partials._search')
-           @yield('content')
+        @include('index._partials._search')
+            @yield('content')
    </div>
    <footer>
        @include('index.includes.footer')

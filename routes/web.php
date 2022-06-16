@@ -15,10 +15,10 @@ use App\Http\Controllers\userController;
 */
 
 Route::get('/', function () {
-    return view('index.layouts.layout');
+    return view('index.pages.index');
 });
 Route::get('/admin', function () {
-    return view('admin.layouts.adminlayout');
+    return view('admin.pages.home');
 });
 Route::get('/contact', function(){
     return view('pages.contact');
@@ -28,7 +28,7 @@ Route::get('/home', function(){
     return view('user.pages.home');
 });
 Route::get('/admin/home', function(){
-    return view('admin.pages.adminhome');
+    return view('admin.pages.home');
 });
 //show registration
 Route::get('/register',[userController::class, 'create']);
