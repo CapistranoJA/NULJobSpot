@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('applications', function (Blueprint $table) {
             $table->id();
+            $table->string('username');
+            $table->foreign('username')->references('name')->on('users');
             $table->string('firstname');
             $table->string('lastname');
             $table->string('middlename');
@@ -39,5 +41,6 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('applications');
+        
     }
 };
