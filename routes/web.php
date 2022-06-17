@@ -17,6 +17,8 @@ use App\Http\Controllers\userController;
 
 Route::get('/',[jobsController::class,'preview']);
 Route::get('/job/{job}',[jobsController::class,'show']);
+Route::get('/register',[userController::class,'register']);
+Route::post('/users',[userController::class,'store']);
 Route::get('/contact', function(){
     return view('pages.contact');
 });
