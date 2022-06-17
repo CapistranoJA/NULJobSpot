@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\jobsController;
 use App\Http\Controllers\userController;
 
 /*
@@ -14,12 +15,8 @@ use App\Http\Controllers\userController;
 |
 */
 
-Route::get('/', function () {
-    return view('index.pages.index');
-});
-Route::get('/admin', function () {
-    return view('admin.pages.home');
-});
+Route::get('/',[jobsController::class,'preview']);
+Route::get('/job/{job}',[jobsController::class,'show']);
 Route::get('/contact', function(){
     return view('pages.contact');
 });
