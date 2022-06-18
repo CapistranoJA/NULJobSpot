@@ -34,7 +34,10 @@
             <a class="nav-link h6 text-light" href="/my-profile">Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link h6 text-light" href="/logout">Logout</a>
+            <form class="mx-1 mx-md-4" method="POST" action="/logout">
+              @csrf
+              <button class="btn btn-outline-secondary btn-sm px-5 text-light "type="submit">Logout</button>
+            </form>
           </li>
         </ul>
         @else
