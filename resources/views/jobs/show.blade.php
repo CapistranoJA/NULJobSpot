@@ -18,7 +18,7 @@
         <p class="fs-4 fw-bold p-1">Job Description: <p class="fs-4 fw-normal"> {{$jobs->description}}</p></p>
         <p class="fs-4 fw-bold p-1">Date & Time Posted: <p class="fs-4 fw-normal"> {{$jobs->created_at}}</p></p>
         </div>
-        <div class="col">
+        <div class="col">   
             <div class=""><img src="{{url('/images/employee-hiring-484.jpg')}}" class="rounded" style="width: 100%;"></div>
         </div>
         </div>

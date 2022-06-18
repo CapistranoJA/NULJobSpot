@@ -51,19 +51,19 @@
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4 text-primary">
-            Latest Posts
+            Members
           </h6>
           <p>
-            <a href="#!" class="text-reset">Lorem Ipsum</a>
+            <a href="#!" class="text-reset">Angeles, Aaron Mark</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Lorem Ipsum</a>
+            <a href="#!" class="text-reset">Capistrano, John Ashley</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Lorem Ipsum</a>
+            <a href="#!" class="text-reset">Maalat, Jose Antonio</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Lorem Ipsum</a>
+            <a href="#!" class="text-reset">Narvacan, Arnold</a>
           </p>
         </div>
         <!-- Grid column -->

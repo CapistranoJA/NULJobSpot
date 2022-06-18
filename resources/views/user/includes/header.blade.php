@@ -26,9 +26,6 @@
           <li class="nav-item">
             <a class="nav-link h6 text-light" href="/">About</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link h6 text-light" href="/contact-us">Contact</a>
-          </li>
           @auth
           <li class="nav-item">
             <a class="nav-link h6 text-light" href="/my-profile">Profile</a>
