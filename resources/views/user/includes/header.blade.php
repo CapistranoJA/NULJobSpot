@@ -27,18 +27,25 @@
             <a class="nav-link h6 text-light" href="/">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link h6 text-light" href="#">Contact</a>
+            <a class="nav-link h6 text-light" href="/contact-us">Contact</a>
           </li>
-          <li>
-            <a class="nav-link h6 text-light" href="#">Login</a>
-          </li>
-          {{-- <li class="nav-item">
-            <a class="nav-link h6 text-light" href="#">Profile</a>
+          @auth
+          <li class="nav-item">
+            <a class="nav-link h6 text-light" href="/my-profile">Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link h6 text-light" href="#">Logout</a>
-          </li> --}}
+            <a class="nav-link h6 text-light" href="/logout">Logout</a>
+          </li>
         </ul>
+        @else
+          <li>
+            <a class="nav-link h6 text-light" href="/login">Login</a>
+          </li>
+          <li>
+            <a class="nav-link h6 text-light" href="/register">Register</a>
+          </li>
+        @endauth
+          
         
       </div>
       

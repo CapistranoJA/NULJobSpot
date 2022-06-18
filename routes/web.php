@@ -20,7 +20,13 @@ Route::get('/',[jobsController::class,'preview']);
 Route::get('/joblist',[jobsController::class,'userindex']);
 Route::get('/joblist/job/{job}',[jobsController::class,'show']);
 Route::get('/register',[userController::class,'register']);
+Route::get('/register',[userController::class, 'create']);
 Route::post('/users',[userController::class,'store']);
+Route::post('/logout',[userController::class,'logout']);
+Route::get('/login',[userController::class, 'login']);
+Route::post('/users/authentication',[userController::class, 'authentication']);
+
+
 Route::get('/contact', function(){
     return view('pages.contact');
 });
@@ -30,5 +36,3 @@ Route::get('/departments/{department}',[departmentsController::class,'show']);
 Route::get('/admin/home', function(){
     return view('admin.pages.home');
 });
-//show registration
-Route::get('/register',[userController::class, 'create']);

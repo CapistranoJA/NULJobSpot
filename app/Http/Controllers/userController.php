@@ -32,4 +32,28 @@ class userController extends Controller
         $users = User::create($formFields);
         return redirect('/')->with('message', 'User Registration successful!');
     }
+    public function logout(Request $request){
+        auth()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        
+        return redirect('/')->with('message','You are now logged out!');
+
+    }
+    public function login(){
+        return view('user.pages.login');
+    }
+
+    public function authentication(Request $request){
+        $formFields = $request->validate([
+            'uname'=>['required'],
+            'password'=>'required',
+        ]);
+        if(auth()->attempt($formFields)){
+            $request->session()->regenerate();
+            return redirect('/')->with('message','You are now logged in!');
+        }
+        return back()->withErrors(['uname'=>'Invalid Credentials'])->onlyInput('uname');
+
+    }
 }

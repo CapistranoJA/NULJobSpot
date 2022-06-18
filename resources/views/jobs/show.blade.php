@@ -23,8 +23,8 @@
         </div>
         </div>
         <div class="clearfix my-3 py-3 d-flex align-items-center justify-content-center">
-            @if (Auth::check()) {
-                <form class="mx-1 mmx-md-4" method="POST" action="/users">
+            @if (Auth::check()) 
+                <form class="mx-1 mmx-md-4" method="POST" action="/application">
                     @csrf
                 <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
@@ -41,15 +41,20 @@
                     <button type="submit" class="btn btn-dark btn-lg text-warning">Apply</button>
                   </div>
                 </form>
-            }
+            
             @else
             <a href="/register" class="">
                 <h4 class="text-warning btn btn-dark btn-lg">Register Now To Apply</h4>
-            </a> 
-            @endif
+            </a>
+           
+         
           
           </div>
+          <a href="/login" class="text-center mb-3">
+            <p class="text-warning">Have an account?</p>
+        </a>
       </div> 
+      @endif
  </div>
 
 

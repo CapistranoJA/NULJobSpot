@@ -18,7 +18,7 @@ class jobsController extends Controller
         return view('jobs.show',['jobs'=>$job]);
     }
     public function userindex(){
-        return view('user.pages.home',['jobs'=>jobs::latest()->filter(request(['search']))->paginate(4)
+        return view('user.pages.home',['jobs'=>jobs::latest()->filter(request(['search']))->paginate(2)
     ]);
     }
 }
