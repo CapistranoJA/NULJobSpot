@@ -14,11 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('jobs', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('title');
-            $table->string('tags');
-            $table->string('department');
-            $table->foreign('department')->references('department')->on('departments');
+            $table->unsignedInteger('dept_id');
+            $table->foreign('dept_id')->references('id')->on('departments')->onDelete('cascade');
             $table->integer('salary');
             $table->longText('qualifications');
             $table->longText('description');

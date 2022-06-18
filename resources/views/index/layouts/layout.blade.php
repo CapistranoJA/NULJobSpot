@@ -6,6 +6,7 @@
 <body>
     
 <div class="container-fluid" style="overflow-x: hidden;">
+   @include('flash-message')
    <header class="row">
        @include('index._partials._hero')
        @include('index.includes.header')

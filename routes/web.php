@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\jobsController;
 use App\Http\Controllers\userController;
+use App\Http\Controllers\departmentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,16 +17,16 @@ use App\Http\Controllers\userController;
 */
 
 Route::get('/',[jobsController::class,'preview']);
-Route::get('/job/{job}',[jobsController::class,'show']);
+Route::get('/joblist',[jobsController::class,'userindex']);
+Route::get('/joblist/job/{job}',[jobsController::class,'show']);
 Route::get('/register',[userController::class,'register']);
 Route::post('/users',[userController::class,'store']);
 Route::get('/contact', function(){
     return view('pages.contact');
 });
+Route::get('/departments',[departmentsController::class,'index']);
+Route::get('/departments/{department}',[departmentsController::class,'show']);
 
-Route::get('/home', function(){
-    return view('user.pages.home');
-});
 Route::get('/admin/home', function(){
     return view('admin.pages.home');
 });

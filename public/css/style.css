@@ -8,3 +8,25 @@
     background-color: rgb(54, 54, 54);
 }
 
+.pagination > li > a,
+.pagination > li > span {
+    color: black; 
+}
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+    background-color: rgb(54, 54, 54);
+    border-color: rgb(54, 54, 54);
+}
+
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: rgb(54, 54, 54); 
+    border-color: rgb(54, 54, 54); 
+}

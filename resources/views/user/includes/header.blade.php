@@ -9,10 +9,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <button type="button" class="btn btn-outline-secondary btn-sm me-3 px-5"><a class="nav-link active" aria-current="page" href="/home">Home</a></button>
+            <button type="button" class="btn btn-outline-secondary btn-sm me-3 px-5"><a class="nav-link active" aria-current="page" href="/">Home</a></button>
           </li>
           <li class="nav-item">
-            <button type="button" class="btn btn-outline-secondary btn-sm px-5 text-light "><a class="nav-link" href="#">Departments</a></button>
+            <button type="button" class="btn btn-outline-secondary btn-sm px-5 text-light "><a class="nav-link active" href="/departments/">Departments</a></button>
           </li>
         </ul>
         
@@ -22,19 +22,22 @@
   </nav>
   <nav class="navbar navbar-expand-lg navbar-dark bg-black static-top">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto me-4">
           <li class="nav-item">
-            <a class="nav-link h6 text-light" href="#">About</a>
+            <a class="nav-link h6 text-light" href="/">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link h6 text-light" href="#">Contact</a>
           </li>
-          <li class="nav-item">
+          <li>
+            <a class="nav-link h6 text-light" href="#">Login</a>
+          </li>
+          {{-- <li class="nav-item">
             <a class="nav-link h6 text-light" href="#">Profile</a>
           </li>
           <li class="nav-item">
             <a class="nav-link h6 text-light" href="#">Logout</a>
-          </li>
+          </li> --}}
         </ul>
         
       </div>
