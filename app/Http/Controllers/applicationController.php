@@ -29,7 +29,7 @@ class applicationController extends Controller
         $formFields['jobs_id']=$request->input('jobs_id');
 
         applications::create($formFields);
-        return redirect('/joblist')->with('message','Your application has been sent! Visit your profile to for more info!');
+        return redirect('/joblist')->with('message','Your application has been sent! Visit your profile for more info!');
     }
     public function download($resume){
         return response()->download(storage_path('/app/public/applicants/'. $resume));

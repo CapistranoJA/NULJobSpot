@@ -72,10 +72,15 @@ class employeeController extends Controller
             'civilstatus'=>'required',
             'email'=>['required','email', Rule::unique('users','email')->ignore($user->id)],
         ]);
-        $user->update($formFields);
         $formFields2=$request->validate([
-            'job_id'=>['required']
+            'job_id'=>['required'],
+            'title'
         ]);
+        $joby=jobs::find($formFields2['job_id']);
+        //$jobx=jobs::where('title',$joby->title);
+    
+        $formFields2['title']=$joby->title;
+        $user->update($formFields);
         $employees->update($formFields2);
         return redirect('/admin/home/employees/list')->with('message','Employee Detail Successfully Updated!');
     }

@@ -21,7 +21,7 @@
             <td>{{$department->id}}</td>
             <td>{{$department->department}}</td>
             <td>{{$department->descriptions}}</td>
-            <td class="row row-cols-2 justify-content-end"> <a href="/admin/home/departments/{{$department->id}}/edit" class="text-decoration-none">
+            <td> <a href="/admin/home/departments/{{$department->id}}/edit" class="text-decoration-none">
                 <h4 class="text-light btn btn-dark btn-sm">Edit</h4>
             </a> 
                 <form action="/admin/home/departments/{{$department->id}}/delete" method="POST">
