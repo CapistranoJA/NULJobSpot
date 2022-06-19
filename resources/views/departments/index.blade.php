@@ -20,7 +20,7 @@
                   @endforeach
                  
                   @else 
-                  <h3 class="text-light">No listings found</h3>
+                  <h3 class="text-light">No Departments found</h3>
                   @endunless  
                 </div>
                 {!! $departments->links('pagination::bootstrap-5') !!}
