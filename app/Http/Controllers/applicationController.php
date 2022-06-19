@@ -14,6 +14,7 @@ class applicationController extends Controller
        
         return view('job-applications.index',['applications'=>applications::latest()->filter(request(['search']))->paginate(10)]);
     }
+    
     public function store(Request $request){
         $user = auth()->user()->id;
         $uname=auth()->user()->uname;
@@ -28,7 +29,7 @@ class applicationController extends Controller
         $formFields['jobs_id']=$request->input('jobs_id');
 
         applications::create($formFields);
-        return redirect('/joblist')->with('message','Your application has been sent! ');
+        return redirect('/joblist')->with('message','Your application has been sent! Visit your profile to for more info!');
     }
     public function download($resume){
         return response()->download(storage_path('/app/public/applicants/'. $resume));

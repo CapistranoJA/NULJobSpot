@@ -61,7 +61,6 @@ class jobsController extends Controller
     }
     public function edit(jobs $job){
         return view('jobs.edit',['jobs'=>$job, 'departments'=>departments::all()]);
-        dd($job);
     }
     public function update(Request $request,jobs $job){
         $formFields = $request->validate([
@@ -84,6 +83,7 @@ class jobsController extends Controller
     }
     public function destroy(jobs $jobs)
     {
+        $jobs->employees()->delete();
         $jobs->applications()->delete();
         $jobs->delete();
         return redirect('/admin/home/vacancy')->with('message','Successfully Deleted');

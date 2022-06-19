@@ -59,7 +59,12 @@ Route::prefix('/admin')->namespace('App\Http\Controllers')->group(function(){
         Route::get('home/applications','applicationController@index');
         Route::get('home/applications/{application}','applicationController@show');
         Route::get('download/applicants/{resume}','applicationController@adminreview');
-        
+        Route::post('home/employees/{application}', 'employeeController@store');
+        Route::get('home/employees/list', 'employeeController@index');
+        Route::get('home/employee/{employees}', 'employeeController@show');
+        Route::get('home/employee/{employees}/edit', 'employeeController@edit');
+        Route::delete('home/employee/{employees}/delete', 'employeeController@destroy');
+        Route::put('home/employees/{employees}/update','employeeController@update');
     });
 
 });

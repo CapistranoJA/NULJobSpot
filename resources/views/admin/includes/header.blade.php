@@ -40,6 +40,9 @@
       <li>
         <a class="nav-link h6 text-light" href="/admin/home/applications">Job Applications</a>
       </li>
+      <li>
+        <a class="nav-link h6 text-light" href="/admin/home/employees/list">Employees</a>
+      </li>
 
       
     

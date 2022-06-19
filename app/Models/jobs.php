@@ -25,5 +25,8 @@ class jobs extends Model
     public function applications(){
         return $this->hasMany(applications::class,'jobs_id');
     }
+    public function employees(){
+        return $this->hasMany(employee::class,'job_id');
+    }
     
 }

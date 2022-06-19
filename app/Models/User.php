@@ -52,4 +52,7 @@ class User extends Authenticatable
     public function applications(){
         return $this->hasMany(applications::class,'user_id');
     }
+    public function employees(){
+        return $this->hasOne(employee::class,'user_id');
+    }
 }
