@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
 <head>
-   @include('includes.head')
+   @include('admin.includes.head')
 </head>
 <body>
 <div class="container-fluid">
    <header class="row">
-       @include('includes.adminheader')
+       @include('admin.includes.header')
    </header>
    <div id="main" class="min-vh-100" style="height:100px;background-color:rgb(250,250,255);">
            @yield('content')
@@ -14,7 +14,7 @@
    
 </div>
 <footer>
-    @include('includes.adminfooter')
+    @include('admin.includes.footer')
 </footer>
 </body>
 </html>

@@ -15,18 +15,11 @@ return new class extends Migration
     {
         Schema::create('applications', function (Blueprint $table) {
             $table->id();
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('middlename');
-            $table->string('gender');
-            $table->longText('address');
-            $table->date('birthdate');
-            $table->string('contact_number');
-            $table->string('civilstatus');
-            $table->string('email');
-            $table->string('educattain');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('resume');
-            $table->string('position');
+            $table->unsignedInteger('jobs_id');
+            $table->foreign('jobs_id')->references('id')->on('jobs');
             $table->timestamps();
         });
     }
@@ -39,5 +32,6 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('applications');
+        
     }
 };
