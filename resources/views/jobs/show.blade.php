@@ -20,7 +20,7 @@
         <p class="fs-4 fw-bold p-1">Date & Time Posted: <p class="fs-4 fw-normal"> {{$jobs->created_at}}</p></p>
         </div>
         <div class="col">   
-            <div class=""><img src="{{url('/images/employee-hiring-484.jpg')}}" class="rounded" style="width: 100%;"></div>
+            <div class=""><img src="{{$jobs->jobs_logo ? asset('storage/'.$jobs->jobs_logo) : asset('/images/employee-hiring-484.jpg')}}" class="rounded" style="width: 100%;"></div>
         </div>
         </div>
         <div class="clearfix my-3 py-3 d-flex align-items-center justify-content-center">

@@ -15,7 +15,7 @@
         @unless(count($jobs)==0)
         @foreach($jobs as $job)
         <div class="container row row-cols-2 text-light">
-          <div class="my-4 col"><img src="{{url('/images/employee-hiring-484.jpg')}}" class="rounded" style="width: 100%;"></div>
+          <div class="my-4 col"><img src="{{$job->jobs_logo ? asset('storage/'.$job->jobs_logo) : asset('/images/employee-hiring-484.jpg')}}"class="rounded" style="width: 100%;"></div>
           <div class="mt-4 col-6">
               <h3 class="text-primary">{{$job->title}}</h3>
               <h5 class="fst-italic text-warning">{{$job->department}}</h5>

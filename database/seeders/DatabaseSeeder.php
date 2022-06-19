@@ -16,10 +16,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-
-        //  DB::table('admin')->insert([
-        //     'adminuser' => 'Admin',
-        //     'password' => bcrypt('admin123'),
-        // ]);
+        // \App\Models\departments::factory(10)->create();
+         DB::table('admin')->insert([
+            'adminuser' => 'Admin',
+            'password' => bcrypt('admin123'),
+        ]);
     }
 }

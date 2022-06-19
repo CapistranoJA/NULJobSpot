@@ -10,6 +10,7 @@ class jobs extends Model
     use HasFactory;
     protected $table ='jobs';
     protected $primaryKey = 'id';
+    protected $fillable =['jobs_logo','title','dept_id','department','salary','qualifications','description'];
     public function scopeFilter($query, array $filters){
         if($filters['search'] ?? false){
         $query->where('title','like','%'.request('search').'%')
@@ -23,6 +24,9 @@ class jobs extends Model
     }
     public function applications(){
         return $this->hasMany(applications::class,'jobs_id');
+    }
+    public function employees(){
+        return $this->hasMany(employee::class,'job_id');
     }
     
 }
