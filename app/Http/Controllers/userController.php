@@ -23,13 +23,12 @@ class userController extends Controller
         'gender'=>['required'],
         'address'=>['required'],
         'birthdate'=>'required|date|before:18 years ago',
-        'contact_number'=>['required','regex:((^(\+)(\d){12}$)|(^\d{11}$))'],
+        'contact_number'=>['required','regex:((^(\+)(\d){12}$)|(^\d{11}$))',Rule::unique('users','contact_number')],
         'civilstatus'=>'required',
         'email'=>['required','email', Rule::unique('users','email')],
         'password'=>'required|confirmed|min:8',
         'checkbox' =>['required'],
     ]);
-        $formFields['status']='unemployed';
         $formFields['password']=bcrypt($formFields['password']);
         $users = User::create($formFields);
         return redirect('/')->with('message', 'User Registration successful!');

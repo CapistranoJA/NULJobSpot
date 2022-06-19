@@ -1,9 +1,12 @@
 <?php
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Validation\Rule;
+
+use App\Models\applications;
+use App\Models\jobs;
 use App\Models\departments;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\DB;
 
 class departmentsController extends Controller
 {
@@ -15,7 +18,7 @@ class departmentsController extends Controller
     public function index()
     {
         return view('departments.index',[
-            'departments'=>departments::all()
+            'departments'=>departments::latest()->filter(request(['search']))->paginate(6)
         ]);
     }
 
@@ -82,17 +85,18 @@ class departmentsController extends Controller
      * @param  \App\Models\departments  $departments
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, departments $departments)
+    public function update(Request $request, departments $department)
     {
         $formFields = $request->validate([
-            'department'=>['required','min:6'],
+            'department'=>'required',
             'descriptions'=>'required',
             'department_logo'=>'image|mimes:jpg,png,jpeg,gif,svg|max:4098',
         ]);
         if($request->hasFile('department_logo')){
             $formFields['department_logo']=$request->file('department_logo')->store('images','public');
         }
-        $departments->update($formFields);
+        $department->update($formFields);
+        
         return redirect('/admin/home/departments');
     }
 
@@ -104,12 +108,14 @@ class departmentsController extends Controller
      */
     public function destroy(departments $department)
     {
+        
+        $jobs=jobs::where('dept_id',$department->id)->delete();
         $department->delete();
         return redirect('/admin/home/departments')->with('message','Successfully Deleted');
     }
     public function manage(){
         return view('departments.manage',[
-            'departments'=>departments::all()
+            'departments'=>departments::latest()->filter(request(['search']))->paginate(10)
         ]);
     }
 }

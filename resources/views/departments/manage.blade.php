@@ -6,6 +6,7 @@
     <a href="/admin/home/departments/create" class="">
         <h4 class="text-light btn btn-dark btn-sm mt-2">Create Department</h4>
     </a>
+    @include('index._partials._admin-departmentsearch')
     @unless(count($departments)==0)
     <thead class="table-dark">
         <th>Department ID</th>
@@ -31,11 +32,16 @@
                 </td>
             </tr>
         @endforeach
+      
         @else
         <h1 class="text-dark text-center my-5 pt-5">No Departments found</h1>
         @endunless
        
     </tbody>
+    
   </table>
+  <div> 
+    {!! $departments->links('pagination::bootstrap-5') !!}
+  </div>
 </div>
 @endsection

@@ -20,11 +20,9 @@ return new class extends Migration
             $table->unsignedInteger('dept_id');
             $table->foreign('dept_id')->references('id')->on('departments')->onDelete('cascade');
             $table->string('department');
-            $table->foreign('department')->references('department')->on('departments')->onDelete('cascade');
             $table->integer('salary');
             $table->longText('qualifications');
             $table->longText('description');
-            $table->string('status');
             $table->timestamps();
         });
     }

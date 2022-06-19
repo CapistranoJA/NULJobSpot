@@ -9,7 +9,7 @@
       
                   <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Editing {{$departments->department}}</p>
   
-                  <form class="mx-1 mx-md-4" method="POST" action="edit/update" enctype="multipart/form-data">
+                  <form class="mx-1 mx-md-4" method="POST" action="/admin/home/departments/{{$departments->id}}/edit/update" enctype="multipart/form-data">
                       @csrf
                       @method('PUT')
                         <div class="col">

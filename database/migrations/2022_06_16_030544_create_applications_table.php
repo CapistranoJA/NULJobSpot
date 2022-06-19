@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->string('uname');
             $table->string('resume');
             $table->unsignedInteger('jobs_id');
             $table->foreign('jobs_id')->references('id')->on('jobs');

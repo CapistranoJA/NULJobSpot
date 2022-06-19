@@ -35,10 +35,10 @@
       </li>
  
       <li>
-        <a class="nav-link h6 text-light" href="/login">Vacancy</a>
+        <a class="nav-link h6 text-light" href="/admin/home/vacancy">Vacancy</a>
       </li>
       <li>
-        <a class="nav-link h6 text-light" href="/">Job Applications</a>
+        <a class="nav-link h6 text-light" href="/admin/home/applications">Job Applications</a>
       </li>
 
       

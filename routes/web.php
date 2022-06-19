@@ -48,6 +48,18 @@ Route::prefix('/admin')->namespace('App\Http\Controllers')->group(function(){
         Route::get('home/departments/{department}/edit','departmentsController@edit');
         Route::put('home/departments/{department}/edit/update','departmentsController@update');    
         Route::delete('home/departments/{department}/delete','departmentsController@destroy');
+        //jobs routes
+        Route::get('home/vacancy','jobsController@manage');
+        Route::get('home/vacancy/create','jobsController@create');
+        Route::post('home/vacancy/create/save','jobsController@store');
+        Route::get('home/vacancy/{job}/edit','jobsController@edit');
+        Route::put('home/vacancy/{job}/edit/update','jobsController@update');    
+        Route::delete('home/vacancy/{jobs}/delete','jobsController@destroy');
+        //application routes
+        Route::get('home/applications','applicationController@index');
+        Route::get('home/applications/{application}','applicationController@show');
+        Route::get('download/applicants/{resume}','applicationController@adminreview');
+        
     });
 
 });
