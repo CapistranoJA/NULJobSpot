@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\User;
+use App\Models\applications;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 
 class userController extends Controller
 {
@@ -41,7 +43,11 @@ class userController extends Controller
 
     }
     public function login(){
+        if(!Auth::check()){
         return view('user.pages.login');
+        }
+        else
+        return redirect('/')->with('message','You are already Logged in!!');
     }
 
     public function authentication(Request $request){
@@ -55,5 +61,15 @@ class userController extends Controller
         }
         return back()->withErrors(['uname'=>'Invalid Credentials'])->onlyInput('uname');
 
+    }
+
+    public function profile(User $users){
+        $users=auth()->user()->id;
+        $applications= applications::with('User')->get();
+        $users = User::find($users);
+
+
+
+        return view('user.pages.my-profile',['users'=>$users]);
     }
 }

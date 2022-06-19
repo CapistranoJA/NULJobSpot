@@ -13,4 +13,5 @@ class departments extends Model
     public function jobs(){
         return $this->hasMany(jobs::class,'dept_id');
     }
+   
 }

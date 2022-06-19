@@ -27,8 +27,12 @@
             <a class="nav-link h6 text-light" href="/">About</a>
           </li>
           @auth
+          @php
+           $user = auth()->user()->id;
+          @endphp
+
           <li class="nav-item">
-            <a class="nav-link h6 text-light" href="/my-profile">Profile</a>
+            <a class="nav-link h6 text-light" href="/my-profile/user/{{$user}}">Profile</a>
           </li>
           <li class="nav-item">
             <form class="mx-1 mx-md-4" method="POST" action="/logout">

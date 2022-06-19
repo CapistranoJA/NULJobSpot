@@ -11,6 +11,7 @@
         <div class="row row-cols-2 p-3">
         <div class="col">
         <h1>Job Details<h1> 
+        <p class="fs-4 fw-bold p-1">Job ID:<span class="fs-4 text-warning fw-normal"> {{$jobs->id}}</span></p>
         <p class="display-6 text-primary">{{$jobs->title}}</p>
         <p class="fs-4 fw-bold p-1">Department:<span class="fs-4 text-warning fw-normal"> {{$jobs->department}}</span></p>
         <p class="fs-4 fw-bold p-1">Potential Salary: <span class="fs-4 fw-normal">₱ {{$jobs->salary}}</span></p>
@@ -24,8 +25,9 @@
         </div>
         <div class="clearfix my-3 py-3 d-flex align-items-center justify-content-center">
             @if (Auth::check()) 
-                <form class="mx-1 mmx-md-4" method="POST" action="/application">
+                <form class="mx-1 mmx-md-4" method="POST" action="/application" enctype="multipart/form-data">
                     @csrf
+                    <input type="hidden" name="jobs_id" value={{$jobs->id}}>
                 <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">

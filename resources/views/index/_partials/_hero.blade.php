@@ -21,9 +21,13 @@
 
 		</div>
         <div class="col">
-            
+		
+            @if(!Auth::check()){
             <button type="button" class="btn btn-warning btn-lg float-end">Go to Admin</button>
-            <h3 class="px-5 py-2 text-light float-end">(+49) 5723 356</h2>
+			}
+			
+			@endif
+			<h3 class="px-5 py-2 text-light float-end">(+49) 5723 356</h2>
         </div>
 	</div>
 </div>

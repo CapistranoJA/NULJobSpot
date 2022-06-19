@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('applications', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
-            $table->foreign('username')->references('uname')->on('users');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('resume');
-            $table->string('position');
+            $table->unsignedInteger('jobs_id');
+            $table->foreign('jobs_id')->references('id')->on('jobs');
             $table->timestamps();
         });
     }
