@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('jobs_logo')->nullable();
             $table->string('title');
             $table->unsignedInteger('dept_id');
             $table->foreign('dept_id')->references('id')->on('departments')->onDelete('cascade');

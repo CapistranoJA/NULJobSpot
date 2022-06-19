@@ -10,6 +10,7 @@ class departments extends Model
     use HasFactory;
     protected $table ='departments';
     protected $primaryKey = 'id';
+    protected $fillable =['department_logo','department','descriptions'];
     public function jobs(){
         return $this->hasMany(jobs::class,'dept_id');
     }

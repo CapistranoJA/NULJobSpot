@@ -26,7 +26,7 @@ class departmentsController extends Controller
      */
     public function create()
     {
-        //
+        return view('departments.create');
     }
 
     /**
@@ -37,7 +37,16 @@ class departmentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $formFields = $request->validate([
+            'department'=>['required','min:6'],
+            'descriptions'=>'required',
+            'department_logo'=>'image|mimes:jpg,png,jpeg,gif,svg|max:4098',
+        ]);
+        if($request->hasFile('department_logo')){
+            $formFields['department_logo']=$request->file('department_logo')->store('images','public');
+        }
+        departments::create($formFields);
+        return redirect('/admin/home/departments');
     }
 
     /**
@@ -61,9 +70,9 @@ class departmentsController extends Controller
      * @param  \App\Models\departments  $departments
      * @return \Illuminate\Http\Response
      */
-    public function edit(departments $departments)
+    public function edit(departments $department)
     {
-        //
+        return view('departments.edit',['departments'=>$department]);
     }
 
     /**
@@ -75,7 +84,16 @@ class departmentsController extends Controller
      */
     public function update(Request $request, departments $departments)
     {
-        //
+        $formFields = $request->validate([
+            'department'=>['required','min:6'],
+            'descriptions'=>'required',
+            'department_logo'=>'image|mimes:jpg,png,jpeg,gif,svg|max:4098',
+        ]);
+        if($request->hasFile('department_logo')){
+            $formFields['department_logo']=$request->file('department_logo')->store('images','public');
+        }
+        $departments->update($formFields);
+        return redirect('/admin/home/departments');
     }
 
     /**
@@ -84,8 +102,14 @@ class departmentsController extends Controller
      * @param  \App\Models\departments  $departments
      * @return \Illuminate\Http\Response
      */
-    public function destroy(departments $departments)
+    public function destroy(departments $department)
     {
-        //
+        $department->delete();
+        return redirect('/admin/home/departments')->with('message','Successfully Deleted');
+    }
+    public function manage(){
+        return view('departments.manage',[
+            'departments'=>departments::all()
+        ]);
     }
 }
