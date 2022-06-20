@@ -1,9 +1,10 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Models\applications;
 use App\Models\jobs;
+use App\Models\employee;
 use App\Models\departments;
+use App\Models\applications;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
@@ -109,7 +110,10 @@ class departmentsController extends Controller
     public function destroy(departments $department)
     {
         
-        $jobs=jobs::where('dept_id',$department->id)->delete();
+        $jobs=jobs::where('dept_id',$department->id)->first();
+        $employees=employee::where('job_id', $jobs->id)->delete();
+        $department->jobs()->delete();
+    
         $department->delete();
         return redirect('/admin/home/departments')->with('message','Successfully Deleted');
     }
