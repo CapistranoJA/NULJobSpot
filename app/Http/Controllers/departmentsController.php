@@ -110,8 +110,11 @@ class departmentsController extends Controller
     public function destroy(departments $department)
     {
         
-        $jobs=jobs::where('dept_id',$department->id)->first();
-        $employees=employee::where('job_id', $jobs->id)->delete();
+       
+        if(!is_null($jobs=jobs::where('dept_id',$department->id)->first())){
+            $employees=employee::where('job_id', $jobs->id)->delete();
+        }
+        
         $department->jobs()->delete();
     
         $department->delete();
