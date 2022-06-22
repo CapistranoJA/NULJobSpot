@@ -4,9 +4,9 @@
        <h1 class='h3 text-center text-light py-2 text-sm'>{{$jobs->title}} Application Details</h1>
    </div>
    <div class = 'container mt-5'>
-    <a href="/joblist" class="">
-        <h4 class="text-warning btn btn-secondary btn-lg">Go back</h4>
-    </a> 
+    <a href="{{ url()->previous() }}" class="">
+      <h4 class="text-light btn btn-dark btn-sm mt-2">Go Back</h4>
+      </a>
        <div id='jobcontainer' class='container border border-light rounded py-2 text-light min-vh-100'>
         <div class="row row-cols-2 p-3">
         <div class="col">

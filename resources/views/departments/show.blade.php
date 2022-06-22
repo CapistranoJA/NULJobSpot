@@ -10,7 +10,7 @@
                 @foreach ($departments->jobs as $job)
                 <div class="col m-5">
                     <div class="card" style="width: 18rem;height:100%;">
-                      <img class="col card-img-top" src="{{$departments->department_logo ? asset('storage/'.$departments->department_logo) : asset('/images/employee-hiring-484.jpg')}}" alt="Card image cap">
+                      <img class="col card-img-top" src="{{$departments->department_logo ? asset('storage/'.$job->jobs_logo) : asset('/images/employee-hiring-484.jpg')}}" alt="Card image cap">
                       <div class="col card-body">
                         <h5 class="col card-title">{{$job->title}}</h5>
                         <a href="/joblist/job/{{$job->id}}" class="col btn btn-dark mt-5">See More</a>
